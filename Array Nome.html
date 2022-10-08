@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Nome</title>
+    <script>
+        nome = new Array(10);//Definição do "vetor" de 10 posições
+        i = 0; //Inicío do contador "I"
+        while(i<10){
+            nome[i] = prompt("Digite o nome " + (i+1));//Atribuição dos nomes no vetor
+            i++;
+        }
+        i = 0;
+        do{
+            document.write("<br> Nome: \t" + nome[i]);//Exibição dos nomes no vetor
+            i++;
+        }while(i < 10);
+
+        palavra = "Diogo"
+        alert(palavra.charAt(2));//Exibição de uma letra na posição especificada (a partir de 0)
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

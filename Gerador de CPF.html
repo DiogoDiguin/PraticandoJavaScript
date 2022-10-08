@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de CPF</title>
+    <script>
+        cpf = new Array(11);
+        i = 0;
+        mult = 10;
+        soma = 0;
+        resto = 0;
+
+        while(i < 9 && mult >=2){
+            cpf[i] = prompt("Digite o "+(i+1)+"º digito");
+            soma = soma + (cpf[i] * mult);
+
+            mult--;
+            i++;
+        }
+        resto = soma % 11;               
+        
+        if(resto < 2){
+            cpf[9] = 0;
+        }else{
+            cpf[9] = 11 - resto;
+        }
+        
+        i = 0;
+        mult = 11;
+        soma = 0;
+        resto = 0;
+        while(i < 10 && mult >= 2){
+            soma = soma + (cpf[i] * mult);
+
+            mult--;
+            i++;
+        }
+        resto = soma % 11;
+
+        if(resto < 2){
+            cpf[10] = 0;
+        }else{
+            cpf[10] = 11 - resto;
+        }
+
+        i = 0;
+        do{
+            document.write(cpf[i]);
+            if(i == 2 || i == 5){
+                document.write(".");
+            }
+            if(i == 8){
+                document.write("-");
+            }
+            i++;
+        }while(i < 11);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
